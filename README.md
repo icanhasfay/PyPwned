@@ -4,7 +4,7 @@ A Python client for the HaveIBeenPwned REST API. https://haveibeenpwned.com/
 
 Installation
 -----
-'''pip install python-instagram'''
+```pip install python-instagram```
 
 Requires
 -----
