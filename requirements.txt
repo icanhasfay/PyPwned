@@ -1,0 +1,5 @@
+requests
+#https://stackoverflow.com/questions/18578439/using-requests-with-tls-doesnt-give-sni-support/18579484#18579484
+pyOpenSSL
+ndg-httpsclient
+pyasn1
