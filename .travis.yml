@@ -1,0 +1,5 @@
+deploy:
+  provider: pypi
+  user: icanhasfay
+  password:
+    secure: Jueioez24rQO78V0EoH4fWFdwe5R8gjQNP5gIBiJUlP2Honz2fg7sKUhvMY/JxbdZeABYxohnImGtK4N9GLY7y/1YxE1iKGku08fgfAlUTMRvDu0aArfackJe+sjG8mPhjRxX4r02Eqd7wWzHTloz60E0UwftbGlplMsnicCbC4=
