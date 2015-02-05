@@ -7,3 +7,4 @@ deploy:
     secure: EMyK2IGeHFptopbjH+L1iIfXdFLzT7TuB23p46YLKE4zX2Z9yNcNcXmq/3kjiKs6B7vul+5KaDyO3qEOOj0DedXyyPK0AAddBy8MSYfKw7dJEFKbpdJfGFuFgFzHQvjCSqOnEcQs6HsLoxRA1zLxqado6zBIkKT42X8tM20GzIg=
   on:
     repo: icanhasfay/PyPwned
+    tags: true
