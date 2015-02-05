@@ -4,4 +4,4 @@ deploy:
   provider: pypi
   user: icanhasfay
   password:
-    secure: Jueioez24rQO78V0EoH4fWFdwe5R8gjQNP5gIBiJUlP2Honz2fg7sKUhvMY/JxbdZeABYxohnImGtK4N9GLY7y/1YxE1iKGku08fgfAlUTMRvDu0aArfackJe+sjG8mPhjRxX4r02Eqd7wWzHTloz60E0UwftbGlplMsnicCbC4=
+    secure: RrinUvFtDA1fdQqRrs1BjTO6VuDYdbqOY4+F1td3rT/Sllw0/5jGXs89OHdGB9hsajs1/UZWRyRkDN8/bVQIr3jA1Oq5RUc54JSUoVJGyOAB48TSqyU0DRJsw3JKDJErKHPAtNjG37vesMViW/rXwRPu3VuJFId+oZsl8Kw28sg=
