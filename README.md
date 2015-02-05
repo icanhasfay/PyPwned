@@ -1,5 +1,6 @@
 PyPwned
 ======
+[![Build Status](https://travis-ci.org/icanhasfay/PyPwned.svg)](https://travis-ci.org/icanhasfay/PyPwned)
 A Python client for the HaveIBeenPwned REST API. https://haveibeenpwned.com/
 
 Installation
