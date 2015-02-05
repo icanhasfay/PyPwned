@@ -1,4 +1,5 @@
 language: python
+script: nosetests
 deploy:
   provider: pypi
   user: icanhasfay
