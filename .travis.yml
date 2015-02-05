@@ -4,4 +4,6 @@ deploy:
   provider: pypi
   user: icanhasfay
   password:
-    secure: RrinUvFtDA1fdQqRrs1BjTO6VuDYdbqOY4+F1td3rT/Sllw0/5jGXs89OHdGB9hsajs1/UZWRyRkDN8/bVQIr3jA1Oq5RUc54JSUoVJGyOAB48TSqyU0DRJsw3JKDJErKHPAtNjG37vesMViW/rXwRPu3VuJFId+oZsl8Kw28sg=
+    secure: EMyK2IGeHFptopbjH+L1iIfXdFLzT7TuB23p46YLKE4zX2Z9yNcNcXmq/3kjiKs6B7vul+5KaDyO3qEOOj0DedXyyPK0AAddBy8MSYfKw7dJEFKbpdJfGFuFgFzHQvjCSqOnEcQs6HsLoxRA1zLxqado6zBIkKT42X8tM20GzIg=
+  on:
+    repo: icanhasfay/PyPwned
