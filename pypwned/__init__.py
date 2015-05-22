@@ -14,10 +14,11 @@ fourOThreeString = "403 - Forbidden - no user agent has been specified in the re
 fourOFourString = "404 - Not found - the account could not be found and has therefore not been pwned"
 emailFormatString = "The provided string is not an email address"
 
+
 def getAllBreachesForAccount(email, domain=""):
-    #Pattern is a derivation of RFC-5322
-    #Grabbed from http://www.regular-expressions.info/email.html
-    pattern = re.compile(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?") 
+    # Pattern is a derivation of RFC-5322
+    # Grabbed from http://www.regular-expressions.info/email.html
+    pattern = re.compile(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
     if not pattern.match(email):
         return emailFormatString
     urlEndpoint = "breachedAccount/"
