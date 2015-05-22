@@ -4,7 +4,7 @@ __version__ = "0.1.1"
 
 import requests
 import json
-
+import re
 
 baseAPIURL = "https://haveibeenpwned.com/api/v2/"
 
@@ -12,9 +12,14 @@ baseAPIURL = "https://haveibeenpwned.com/api/v2/"
 fourHundredString = "400 - Bad request - the account does not comply with an acceptable format (i.e. it's an empty string)"
 fourOThreeString = "403 - Forbidden - no user agent has been specified in the request"
 fourOFourString = "404 - Not found - the account could not be found and has therefore not been pwned"
-
+emailFormatString = "The provided string is not an email address"
 
 def getAllBreachesForAccount(email, domain=""):
+    #Pattern is a derivation of RFC-5322
+    #Grabbed from http://www.regular-expressions.info/email.html
+    pattern = re.compile(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?") 
+    if not pattern.match(email):
+        return emailFormatString
     urlEndpoint = "breachedAccount/"
     if domain == "":
         urlToFetch = baseAPIURL+urlEndpoint+email
