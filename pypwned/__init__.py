@@ -1,5 +1,5 @@
 __author__ = 'Eric Fay'
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 import requests
@@ -12,6 +12,7 @@ baseAPIURL = "https://haveibeenpwned.com/api/v2/"
 fourHundredString = "400 - Bad request - the account does not comply with an acceptable format (i.e. it's an empty string)"
 fourOThreeString = "403 - Forbidden - no user agent has been specified in the request"
 fourOFourString = "404 - Not found - the account could not be found and has therefore not been pwned"
+fourTwentyNineString = "Rate limit exceeded, refer to acceptable use of the API: https://haveibeenpwned.com/API/v2#AcceptableUse"
 emailFormatString = "The provided string is not an email address"
 
 
@@ -31,6 +32,8 @@ def getAllBreachesForAccount(email, domain=""):
             return fourOThreeString
         elif r.status_code == 404:
             return fourOFourString
+        elif r.status_code == 429:
+            return fourTwentyNineString
         else:
             return r.json()
     else:
@@ -43,6 +46,8 @@ def getAllBreachesForAccount(email, domain=""):
             return fourOThreeString
         elif r.status_code == 404:
             return fourOFourString
+        elif r.status_code == 429:
+            return fourTwentyNineString
         else:
             return r.json()
 
@@ -63,6 +68,8 @@ def getAllBreaches(domain=""):
             return fourOThreeString
         elif r.status_code == 404:
             return fourOFourString
+        elif r.status_code == 429:
+            return fourTwentyNineString
         else:
             return r.json()
 
@@ -77,6 +84,8 @@ def getSingleBreachedSite(name):
         return fourOThreeString
     elif r.status_code == 404:
         return fourOFourString
+    elif r.status_code == 429:
+        return fourTwentyNineString
     else:
         return r.json()
 
@@ -91,6 +100,8 @@ def getAllDataClasses():
         return fourOThreeString
     elif r.status_code == 404:
         return fourOFourString
+    elif r.status_code == 429:
+        return fourTwentyNineString
     else:
         return r.json()
 
@@ -105,5 +116,7 @@ def getAllPastesForAccount(account):
         return fourOThreeString
     elif r.status_code == 404:
         return fourOFourString
+    elif r.status_code == 429:
+        return fourTwentyNineString
     else:
         return r.json()
