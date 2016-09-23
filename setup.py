@@ -13,6 +13,7 @@ setup(
     author_email="icanhasfay@gmail.com",
     url="https://github.com/icanhasfay/PyPwned",
     license=open("LICENSE.rst").read(),
+    install_requires=['requests'],
     classifiers=(
         "Intended Audience :: Developers",
         "Intended Audience :: End Users/Desktop",
