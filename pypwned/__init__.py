@@ -1,5 +1,5 @@
 __author__ = 'Eric Fay'
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 
 
 import requests
@@ -13,6 +13,7 @@ fourHundredString = "400 - Bad request - the account does not comply with an acc
 fourOThreeString = "403 - Forbidden - no user agent has been specified in the request"
 fourOFourString = "404 - Not found - the account could not be found and has therefore not been pwned"
 fourTwentyNineString = "Rate limit exceeded, refer to acceptable use of the API: https://haveibeenpwned.com/API/v2#AcceptableUse"
+fiveHundredString = "A server error occurred on haveibeenpwned.com. Please try again later."
 emailFormatString = "The provided string is not an email address"
 
 
@@ -34,6 +35,8 @@ def getAllBreachesForAccount(email, domain=""):
             return fourOFourString
         elif r.status_code == 429:
             return fourTwentyNineString
+        elif r.status_code >= 500:
+            return fiveHundredString
         else:
             return r.json()
     else:
@@ -48,6 +51,8 @@ def getAllBreachesForAccount(email, domain=""):
             return fourOFourString
         elif r.status_code == 429:
             return fourTwentyNineString
+        elif r.status_code >= 500:
+            return fiveHundredString
         else:
             return r.json()
 
@@ -70,6 +75,8 @@ def getAllBreaches(domain=""):
             return fourOFourString
         elif r.status_code == 429:
             return fourTwentyNineString
+        elif r.status_code >= 500:
+            return fiveHundredString
         else:
             return r.json()
 
@@ -86,6 +93,8 @@ def getSingleBreachedSite(name):
         return fourOFourString
     elif r.status_code == 429:
         return fourTwentyNineString
+    elif r.status_code >= 500:
+        return fiveHundredString
     else:
         return r.json()
 
@@ -102,6 +111,8 @@ def getAllDataClasses():
         return fourOFourString
     elif r.status_code == 429:
         return fourTwentyNineString
+    elif r.status_code >= 500:
+        return fiveHundredString
     else:
         return r.json()
 
@@ -118,5 +129,7 @@ def getAllPastesForAccount(account):
         return fourOFourString
     elif r.status_code == 429:
         return fourTwentyNineString
+    elif r.status_code >= 500:
+        return fiveHundredString
     else:
         return r.json()
