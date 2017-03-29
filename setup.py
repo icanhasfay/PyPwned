@@ -4,7 +4,7 @@ setup(
     name="pypwned",
     packages=["pypwned"],
     package_dir={"pypwned": "pypwned"},
-    version="0.1.5",
+    version="0.1.6",
     description="A Python client for the HaveIBeenPwned REST API",
     long_description=open("README.md").read() + "\n\n" + open("CHANGES.rst").read(),
     author="Eric Fay",

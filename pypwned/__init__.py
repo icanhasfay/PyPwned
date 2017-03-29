@@ -1,5 +1,5 @@
 __author__ = 'Eric Fay'
-__version__ = "0.1.5"
+__version__ = "0.1.6"
 
 
 import requests
@@ -19,8 +19,8 @@ emailFormatString = "The provided string is not an email address"
 
 def getAllBreachesForAccount(email, domain=""):
     # Pattern is a derivation of RFC-5322
-    # Grabbed from http://www.regular-expressions.info/email.html
-    pattern = re.compile(r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+    # Grabbed from http://emailregex.com/
+    pattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
     if not pattern.match(email):
         return emailFormatString
     urlEndpoint = "breachedAccount/"
