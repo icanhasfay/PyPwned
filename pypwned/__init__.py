@@ -1,5 +1,5 @@
 __author__ = 'Eric Fay'
-__version__ = "0.1.6"
+__version__ = "0.1.7"
 
 
 import requests
@@ -23,7 +23,7 @@ def getAllBreachesForAccount(email, domain=""):
     pattern = re.compile(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)")
     if not pattern.match(email):
         return emailFormatString
-    urlEndpoint = "breachedAccount/"
+    urlEndpoint = "breachedaccount/"
     if domain == "":
         urlToFetch = baseAPIURL+urlEndpoint+email
         r = requests.get(urlToFetch, verify=True)
