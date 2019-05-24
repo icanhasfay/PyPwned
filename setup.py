@@ -10,8 +10,9 @@ setup(
     author="Eric Fay",
     author_email="icanhasfay@gmail.com",
     url="https://github.com/icanhasfay/PyPwned",
-    license=open("LICENSE.rst").read(),
+    license="MIT",
     install_requires=["requests"],
+    long_description_content_type="text/markdown",
     classifiers=(
         "Intended Audience :: Developers",
         "Intended Audience :: End Users/Desktop",
