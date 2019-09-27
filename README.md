@@ -17,6 +17,8 @@ Requires
 
 Usage
 -----
+> Note: The below examples assume you have loaded the envrionment variable HIBP_API_KEY with your appropriate Have I Been Pwned API key.
+More details here, https://haveibeenpwned.com/API/Key.
 
 ### Breaches
 
@@ -26,15 +28,19 @@ Usage
 ##### Get all breaches for an account across all domains. 
 
 ```
-import pypwned
-print pypwned.getAllBreachesForAccount(email="foo@bar.com")
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getAllBreachesForAccount(email="foo@bar.com")
 ```
 
 ##### Get all breaches for an account across a specific domain. 
 
 ```
-import pypwned
-print pypwned.getAllBreachesForAccount(email="foo@bar.com",domain="adobe.com")
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getAllBreachesForAccount(email="foo@bar.com",domain="adobe.com")
 ```
 
 
@@ -43,15 +49,19 @@ print pypwned.getAllBreachesForAccount(email="foo@bar.com",domain="adobe.com")
 ##### Return the details of each breach in the system.
 
 ```
-import pypwned
-print pypwned.getAllBreaches()
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getAllBreaches()
 ```
 
 ##### Return the details of each breach associated with a specific domain.
 
 ```
-import pypwned
-print pypwned.getAllBreaches(domain="adobe.com")
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getAllBreaches(domain="adobe.com")
 ```
 
 #### Getting a single breached site
@@ -59,8 +69,10 @@ print pypwned.getAllBreaches(domain="adobe.com")
 Return the details of a single breach, by breach name.
 
 ```
-import pypwned
-print pypwned.getSingleBreachedSite(name="adobe")
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getSingleBreachedSite(name="adobe")
 ```
 
 #### Getting all data classes in the system
@@ -68,8 +80,10 @@ print pypwned.getSingleBreachedSite(name="adobe")
 Return the different types of data classes that are associated with a record in a breach. E.G, Email addresses and passwords
 
 ```
-import pypwned
-print pypwned.getAllDataClasses()
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getAllDataClasses()
 ```
 
 ### Pastes
@@ -80,7 +94,9 @@ print pypwned.getAllDataClasses()
 Return any pastes that contain the given email address
 
 ```
-import pypwned
-print pypwned.getAllPastesForAccount(account="foo@bar.com")
+import pypwned, os
+your_hibp_key = os.environ.get("HIBP_API_KEY")
+pwny = pypwned.pwned(your_hibp_key)
+pwny.getAllPastesForAccount(account="foo@bar.com")
 ```
 
