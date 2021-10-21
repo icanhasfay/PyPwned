@@ -11,7 +11,7 @@ setup(
     author_email="icanhasfay@gmail.com",
     url="https://github.com/icanhasfay/PyPwned",
     license="MIT",
-    install_requires=["requests"],
+    install_requires=['requests>=2.23.0'],
     long_description_content_type="text/markdown",
     classifiers=(
         "Intended Audience :: Developers",
